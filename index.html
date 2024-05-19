@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR Running Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #gameCanvas {
+            display: block;
+            background-color: #f0f0f0;
+        }
+        #startScreen, #gameOverScreen {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #startScreen button, #gameOverScreen button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="startScreen">
+        <h1>PR Running Game</h1>
+        <p>Select your character:</p>
+        <button onclick="startGame('boy')">Boy</button>
+        <button onclick="startGame('girl')">Girl</button>
+        <button onclick="startGame('trans')">Trans</button>
+        <button onclick="startGame('nonbinary')">Nonbinary</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    <div id="gameOverScreen">
+        <h1>Game Over</h1>
+        <p>Failure isn't an option. RESTART.</p>
+        <button onclick="restartGame()">Restart</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
